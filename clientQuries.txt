@@ -77,3 +77,42 @@ mutation createUser ($userNew:UserInput!){
     "password": "12345"
 }
 }
+
+
+-----------------------------------------
+mutation SignIn ($userSignIn:UserSigninInput!){
+  user:signInUser(userSignIn:$userSignIn) {
+    token
+  }
+}
+
+QUERY VARIABLES
+{
+  "userSignIn": {
+    "email": "kinjal@gmail.com",
+    "password": "12345665"
+}
+}
+
+
+---------------------------------------
+mutation createQuote {
+ createQuote(name:"I am nice Quote")
+}
+
+{
+  "authorization": "dfsfsdfs"
+}
+
+
+
+-----------------------------------------------
+query getAllQuotes {
+ quoteByName{
+  name
+  by{
+    _id
+    firstName
+  }
+}
+}
